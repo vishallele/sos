@@ -4,25 +4,39 @@
 
 {% block body %}
 
-{% if error %}
-    <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-{% endif %}
+    <div class="py-4 text-center">
 
-<form action="{{ path('Login') }}" method="post">
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="_username" value="{{ lastUsername }}" />
+        <h2>Sign In</h2> 
+        {% if error %}
+            <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        {% endif %}
+    </div>
 
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="_password" />
+    <form action="{{ path('Login') }}" method="post">
+        <div class="row">
+            <div class="col-md-4 offset-md-4">
+                <div class="card">
+                    <div class="card-body">
 
-    {#
-        If you want to control the URL the user
-        is redirected to on success (more details below)
-        <input type="hidden" name="_target_path" value="/account" />
-    #}
+                        <div class="mb-2">
+                            <label for="username">Email Address</label>
+                            <input class="form-control" type="text" id="username" name="_username" value="{{ lastUsername }}" />
+                        </div>
 
-    <button type="submit">login</button>
-</form>
-    
-    
+                        <div class="mb-4">
+                            <label for="password">Password</label>
+                            <input class="form-control" type="password" id="password" name="_password" />
+                        </div>
+                        {#
+                            If you want to control the URL the user
+                            is redirected to on success (more details below)
+                            <input type="hidden" name="_target_path" value="/account" />
+                        #}
+
+                        <button type="submit" class="btn btn-success btn-block">Sign In</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
 {% endblock %}

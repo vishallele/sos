@@ -1,0 +1,32 @@
+{
+  "name": "sos",
+  "description": "SOS specific packages",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "@symfony/webpack-encore": "^0.22.4",
+    "bootstrap": "^4.2.1",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "encoredev": "./node_modules/.bin/encore dev",
+    "encoreprod": "./node_modules/.bin/encore production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vishallele/sos.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vishallele/sos/issues"
+  },
+  "homepage": "https://github.com/vishallele/sos#readme"
+}
